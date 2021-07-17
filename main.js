@@ -1,3 +1,3 @@
-funclion justSomeAlert(){
+function justSomeAlert(){
   alert("Just Some Alert");
 }
