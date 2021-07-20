@@ -1,4 +1,26 @@
-var
+  function pressButton1(){
+    ctx.clearRect(0, 175, 125, 25)
+    ctx.fillStyle='blue'
+    ctx.fillRect (125, 175, 125, 25)
+    ctx.fillStyle='green' 
+    ctx.fillRect (50,175, 25,25)
+   }
+   function pressButton2(){
+    ctx.clearRect(0, 175, 125, 25)
+    ctx.fillStyle='blue'
+    ctx.fillRect (125, 175, 125, 25)
+    ctx.fillStyle='green' 
+    ctx.fillRect (50,175, 25,25)
+   }
+   function pressButton3(){
+    ctx.clearRect(0, 175, 125, 25)
+    ctx.fillStyle='blue'
+    ctx.fillRect (275, 175, 125, 25)
+    ctx.fillStyle='green' 
+    ctx.fillRect (50,175, 25,25)
+   }
+   
+ var
    //x, y, w, h
       canvas = document.getElementById('game')
       ctx = canvas.getContext('2d')
@@ -14,23 +36,6 @@ var
       //1 square
       ctx.fillStyle='blue'
       ctx.fillRect (0, 175, 125, 25) 
-      
-let x = 0
- document.onkeypress = function(event){
-   console.log(event)
-   //button1
-   if(event.code=='Digit1')
-   {
-    let codeNumber = Number(prompt('куда переместить 1 кольцо'))
-   }
    
-   if (codeNumber = 2){
-     ctx.clearRect(0, 175, 125, 25)
-     ctx.fillRect (125, 175, 125, 25)
-     ctx.fillStyle='green' 
-     ctx.fillRect (50,175, 25,25)
-   }
- }
-
 
 
