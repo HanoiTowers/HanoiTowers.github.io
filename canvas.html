@@ -40,11 +40,41 @@
     }else alert("no context");
    }
   </script>
+  <script>
+   //глобальная переменная чтобы помнить состояние - тащим мы сейчас диск или нет
+   var carryDisk = false;
+
+   //по нажатию мышью на диск - состояние менятся, потом сюда прилепливание диска на пенек добавим
+   //этот обработчик привязан только к диску
+   function mouseDown(){
+    carryDisk = !carryDisk;
+    console.log("mouse down");
+   }
+
+   //при движении мышью по полю - если тащим диск, то его надо подвинуть вслед за мышью
+   function mouseMove(e){
+    if(!carryDisk)
+      return;
+
+    var disk1 =document.getElementById("disk1");
+    disk1.style.position = "absolute";
+    disk1.style.left = e.clientX + 'px';
+    disk1.style.top = e.clientY+ 'px';
+
+     console.log("mouse move");
+   }
+  </script>
  </head>
  <body>
  Hello <a href="#" onclick="drawTower();">Canvas!</a>
  <div style="padding-top:50px; padding-left:50px; text-align: center;">
     <canvas id="tower" style="background-color:seagreen;">canvas</canvas>
 </div>
+<br/><br/>таскание диска по полю:
+
+ <div style="background-color: aliceblue; width:100%; height:500px;" onmousemove="mouseMove(event)">
+  <div id="disk1" style="background-color: aqua; width: 50px; border:solid 1px black;" onmousedown="mouseDown();">&nbsp;</div>
+
+ </div>
  </body>
 </html>
