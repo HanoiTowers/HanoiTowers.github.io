@@ -4,8 +4,8 @@
   <title>canvas</title>
   <meta charset="utf-8">
   <script> 
-   window.onload = function() {
-    var drawingCanvas = document.getElementById('smile');
+   function drawTower() {
+    var drawingCanvas = document.getElementById('tower');
     if(drawingCanvas && drawingCanvas.getContext) {
      var context = drawingCanvas.getContext('2d');
      // Рисуем окружность 
@@ -37,23 +37,14 @@
      context.closePath();
      context.stroke();
      context.fill();
-    }
+    }else alert("no context");
    }
   </script>
  </head>
  <body>
-  <canvas id="smile" width="200" height="200">
-    <p>Ваш браузер не поддерживает рисование.</p>
-  </canvas>
-<br/><br/><br/>
-<center>
-	<div style="width:800px;">
-	<div style="width:100%; text-align:left; font-size:20pt">Мудрец, понявший рекурсию, свободен от колеса итераций</div>
-	<div style="width:100%; text-align:right; font-style:italic;">Конфуций</div>
-	<div>
-<br/><br/><br/>
-	<img src=".\HanoiTowers.jpg" title="Ololo" width="800"/>
-</center>
- <a href="./canvas.html">canvas</a>
+ Hello <a href="#" onclick="drawTower();">Canvas!</a>
+ <div style="padding-top:50px; padding-left:50px; text-align: center;">
+    <canvas id="tower" style="background-color:seagreen;height:200px;width:200px;"></canvas>
+</div>
  </body>
 </html>
