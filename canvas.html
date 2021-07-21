@@ -58,8 +58,8 @@
 
     var disk1 =document.getElementById("disk1");
     disk1.style.position = "absolute";
-    disk1.style.left = (e.clientX - event.offsetX) + 'px';
-    disk1.style.top = (e.clientY - event.offsetY)+ 'px';
+    disk1.style.left = e.clientX + 'px';
+    disk1.style.top = e.clientY + 'px';
 
      console.log("mouse move");
    }
