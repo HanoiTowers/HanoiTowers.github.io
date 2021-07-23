@@ -1,26 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Document</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="js.js" defer></script>
-    </head>
-    <body>
-       <canvas width="400px" height="200px" id="game"></canvas>
-       <br>
-       <button class="but1" onclick="pressButton1()">передвинуть на 1 столб, 1 кольцо</button>
-       <button class="but2" onclick="pressButton2()">передвинуть на 2 столб, 1 кольцо</button>
-       <button class="but3" onclick="pressButton3()">передвинуть на 3 столб, 1 кольцо</button>
-       <br>
-       <button class="but1" onclick="pressButton1Punkt2()">передвинуть на 1 столб, 2 кольцо</button>
-       <button class="but2" onclick="pressButton2Punkt2()">передвинуть на 2 столб, 2 кольцо</button>
-       <button class="but3" onclick="pressButton3Punkt2()">передвинуть на 3 столб, 2 кольцо</button>
-       <br>
-       <button class="but1" onclick="pressButton1Punkt3()">передвинуть на 1 столб, 3 кольцо</button>
-       <button class="but2" onclick="pressButton2Punkt3()">передвинуть на 2 столб, 3 кольцо</button>
-       <button class="but3" onclick="pressButton3Punkt3()">передвинуть на 3 столб, 3 кольцо</button>
-
-
-    </body>
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>DOM</title>
+  <script src="script.js" defer></script>
+  <style>
+     body{
+      padding: 0px ;
+      margin: 0px ;
+    }
+   #home{
+    
+     width: 100%;
+     max-width: 500px;
+     height: 500px;
+     border:  solid black 5px  ;
+     position: relative;
+   }
+   #boy{
+    margin: 1px;
+     position:absolute;
+     width: 100px;
+     height: 100px;
+     background-color: black;
+   }
+ </style>
+ </head>
+ <body>
+   <div id="home" onmousemove="mouseMove(event)" onmouseout="mousOut ">
+   <div id="boy" onmousedown="mouseDown(event)">&nbsp;</div>
+   </div>
+ 
+ </body>
 </html>
