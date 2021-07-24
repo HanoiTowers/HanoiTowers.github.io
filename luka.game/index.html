@@ -3,32 +3,52 @@
  <head>
   <meta charset="utf-8">
   <title>DOM</title>
-  <script src="js.js" defer></script>
+  <script src="script.js" defer></script>
   <style>
+
      body{
       padding: 0px ;
       margin: 0px ;
+     
     }
-   #home{
     
-     width: 100%;
-     max-width: 500px;
+   #home{
+     width: 500px;
+     
      height: 500px;
      border:  solid black 5px  ;
      position: relative;
    }
-   #boy{
-    margin: 1px;
-     position:absolute;
-     width: 100px;
-     height: 100px;
+   #ob1{
+     margin: 1px;
+     
+     width: 50px;
+     height: 20px;
      background-color: black;
    }
+   #ob2{
+     margin: 1px;
+     
+     width: 50px;
+     height: 20px;
+     background-color: violet;
+   }
+   #ob3{
+     margin: 1px;
+     
+     width: 50px;
+     height: 20px;
+     background-color: rgb(127, 255, 8);
+   }
+
  </style>
  </head>
  <body>
-   <div id="home" onmousemove="mouseMove(event)" onmouseout="mousOut ">
-   <div id="boy" onmousedown="mouseDown(event)">&nbsp;</div>
+   
+   <div id="home" onmousemove="mouseMove(event)">
+   <div id="ob1" onmousedown="mouseDown1(event)"  onmouseup="mouseUp()">&nbsp;</div>
+   <div id="ob2" onmousedown="mouseDown2(event)" onmouseup="mouseUp()">&nbsp;</div>
+   <div id="ob3" onmousedown="mouseDown3(event)" onmouseup="mouseUp()">&nbsp;</div>
    </div>
  
  </body>
