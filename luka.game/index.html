@@ -3,6 +3,7 @@
  <head>
   <meta charset="utf-8">
   <title>DOM</title>
+  
   <script src="script.js" defer></script>
   <style>
 
@@ -20,27 +21,30 @@
    }
    #ob1{
      margin: 1px;
-     
+     position:absolute;
      width: 50px;
      height: 20px;
      background-color: gray;
    }
    #ob2{
      margin: 1px;
-     
+     position:absolute;
+     top: 21px;
      width: 50px;
      height: 20px;
      background-color: violet;
    }
    #ob3{
      margin: 1px;
+     position:absolute;
+     top: 42px;
      width: 50px;
      height: 20px;
      background-color: rgb(127, 255, 8);
    }
    .tower{
      margin-top: 50px;
-     position: absolute;
+     position:absolute;
      width: 5px;
      height: 150px;
      background-color: black;
@@ -54,18 +58,46 @@
   #tower3{
       left: 350px;
   }
+  #liketow1{
+    position: absolute;
+    
+    width: 100px;
+    height: 150px;
+    position:absolute;
+    border:solid black 5px;
+    margin-top: 50px;
+  }
+  #liketow2{
+    position: absolute;
+    
+    width: 100px;
+    height: 150px;
+    position:absolute;
+    border:solid black 5px;
+    margin-top: 50px;
+    
+  }
+  #liketow3{
+    position: absolute;
+
+    width: 100px;
+    height: 150px;
+    position:absolute;
+    border:solid black 5px;
+    margin-top: 50px;
+    
+  }
 
  </style>
  </head>
  <body>
-   
    <div id="home" onmousemove="mouseMove(event)">
    <div id="ob1" onmousedown="mouseDown1(event)"  onmouseup="mouseUp(event)">&nbsp;</div>
    <div id="ob2" onmousedown="mouseDown2(event)" onmouseup="mouseUp(event)">&nbsp;</div>
    <div id="ob3" onmousedown="mouseDown3(event)" onmouseup="mouseUp(event)">&nbsp;</div>
-   <div class="tower" id="tower1">&nbsp;</div>
-   <div class="tower" id="tower2">&nbsp;</div>
-   <div class="tower" id="tower3">&nbsp;</div>
+   <div id="liketow1"><div class="tower" id="tower1">&nbsp;</div></div>
+   <div id="liketow2"><div class="tower" id="tower2">&nbsp;</div></div>
+   <div id="liketow3"><div class="tower" id="tower3">&nbsp;</div></div>
    </div>
  
  </body>
