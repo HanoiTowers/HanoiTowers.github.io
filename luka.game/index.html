@@ -3,7 +3,7 @@
  <head>
   <meta charset="utf-8">
   <title>DOM</title>
-  <script src="js.js" defer></script>
+  <script src="script.js" defer></script>
   <style>
 
      body{
@@ -14,7 +14,6 @@
     
    #home{
      width: 500px;
-     
      height: 500px;
      border:  solid black 5px  ;
      position: relative;
@@ -24,7 +23,7 @@
      
      width: 50px;
      height: 20px;
-     background-color: black;
+     background-color: gray;
    }
    #ob2{
      margin: 1px;
@@ -35,20 +34,38 @@
    }
    #ob3{
      margin: 1px;
-     
      width: 50px;
      height: 20px;
      background-color: rgb(127, 255, 8);
    }
+   .tower{
+     margin-top: 50px;
+     position: absolute;
+     width: 5px;
+     height: 150px;
+     background-color: black;
+   }
+  #tower1{
+    left: 150px;
+  }
+  #tower2{
+     left: 250px;
+  }
+  #tower3{
+      left: 350px;
+  }
 
  </style>
  </head>
  <body>
    
    <div id="home" onmousemove="mouseMove(event)">
-   <div id="ob1" onmousedown="mouseDown1(event)"  onmouseup="mouseUp()">&nbsp;</div>
-   <div id="ob2" onmousedown="mouseDown2(event)" onmouseup="mouseUp()">&nbsp;</div>
-   <div id="ob3" onmousedown="mouseDown3(event)" onmouseup="mouseUp()">&nbsp;</div>
+   <div id="ob1" onmousedown="mouseDown1(event)"  onmouseup="mouseUp(event)">&nbsp;</div>
+   <div id="ob2" onmousedown="mouseDown2(event)" onmouseup="mouseUp(event)">&nbsp;</div>
+   <div id="ob3" onmousedown="mouseDown3(event)" onmouseup="mouseUp(event)">&nbsp;</div>
+   <div class="tower" id="tower1">&nbsp;</div>
+   <div class="tower" id="tower2">&nbsp;</div>
+   <div class="tower" id="tower3">&nbsp;</div>
    </div>
  
  </body>
