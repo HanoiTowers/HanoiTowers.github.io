@@ -23,9 +23,16 @@ function mouseDown3(event){
   diskDrag = !diskDrag
    numDisk = 3  
 }
- function mouseUp(){
+ function mouseUp(event){
    diskDrag = !diskDrag
-   console.log(diskDrag)
+   console.log(ob1.style.left, ob1.style.top )
+   console.log(event.pageX, event.pageY)
+   if(ob1.style.left<=150 || ob1.style.left>=100){
+    ob1.style.left= 127 +'px'
+    ob2.style.top = 223 + 'px'
+    diskDrag = !diskDrag
+   }
+
  }
  
  
@@ -51,4 +58,16 @@ function mouseMove(event){
     ob3.style.left = (event.pageX - 6 - startX) + 'px'
     ob3.style.top = (event.pageY - 6 - startY ) + 'px'
   }
+}
+function mouseUp(event){
+  diskDrag = !diskDrag
+  
+  console.log(event.pageX, event.pageY)
+  let ob1 = document.getElementById('ob1')
+  if(ob1.style.left<=150 || ob1.style.left>=100){
+   ob1.style.left= 127 +'px'
+   ob2.style.top = 223 + 'px'
+   diskDrag = !diskDrag
+  }
+
 }
