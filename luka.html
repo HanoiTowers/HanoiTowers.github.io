@@ -1,1 +1,75 @@
-I created another file
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas</title>
+    <meta charset="utf-8">
+    <script>
+        //глобальная переменная чтобы помнить состояние - тащим мы сейчас диск или нет
+        var carryDisk = false;
+        //глобальная переменная помнит куда прилипать, в начале -1
+        var stickToTower = 1;
+
+        //по нажатию мышью на диск - состояние менятся, потом сюда прилепливание диска на пенек добавим
+        //этот обработчик привязан только к диску
+        function mouseDown(){
+            carryDisk = !carryDisk;
+            console.log("mouse down");
+        }
+        function mouseUp(event){
+            console.log("stick to tower:" + stickToTower);
+            if(carryDisk) {
+                stickDiskToTheTower(stickToTower);
+            }
+            carryDisk=!carryDisk
+        }
+
+
+        //при движении мышью по полю - если тащим диск, то его надо подвинуть вслед за мышью
+        function mouseMove(e){
+            if(!carryDisk)
+                return;
+
+            var disk1 =document.getElementById("disk1");
+            disk1.style.left = e.clientX + 'px';
+            disk1.style.top = e.clientY + 'px';
+
+            console.log("mouse move");
+        }
+
+        function towerHover(towerNum){
+            console.log("tower hover" + towerNum);
+            stickToTower = towerNum;
+        }
+
+        function towerOut(){
+            console.log("tower out");
+            stickToTower = 1;
+        }
+
+        function stickDiskToTheTower(stickToTower){
+            var tower = document.getElementById("tower" + stickToTower);
+            var disk1 =document.getElementById("disk1");
+
+            disk1.style.left = (tower.getBoundingClientRect().left + 25) + "px";
+            disk1.style.top = (tower.getBoundingClientRect().top + 450) + "px";
+        }
+    </script>
+</head>
+<body onload="stickDiskToTheTower(1)">
+<a href="./index.html">&lt;&lt;&nbsp;home</a>
+<H1>прилипание диска к башням<H1>
+
+<div id="disk1" style="background-color: aqua; height:50px; width: 100px; border:solid 1px black; position: absolute;" onmousedown="mouseDown();"  onmouseup="mouseUp();">&nbsp;</div>
+<div style="background-color: aliceblue; width:100%; height:500px; display:flex;" onmousemove="mouseMove(event)" onmouseenter="towerOut()">
+    <div id="tower1" style="background-color: coral; width: 200px; height: 100%; margin-left:100px;" onmouseenter="towerHover(1)" >&nbsp;Башня 1
+
+    </div>
+    <div id="tower2" style="background-color: coral; width: 200px; height: 100%; margin-left:100px;" onmouseenter="towerHover(2)" >&nbsp;Башня 2</div>
+    <div id="tower3" style="background-color: coral; width: 200px; height: 100%; margin-left:100px;" onmouseenter="towerHover(3)" >&nbsp;Башня 3</div>
+
+</div>
+<p style="font-size: 12px;">
+    тут есть бага - если слишком быстро кликать - включается drag-and-drop и мой код не работает
+</p>
+</body>
+</html>
