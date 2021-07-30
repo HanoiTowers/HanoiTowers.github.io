@@ -1,9 +1,11 @@
-let numDisk
 
-var diskDrag = false
+let numDisk
+let homeTower
+
 let startX
 let startY
 
+var diskDrag = false
 function mouseDown1(event){
   startX= event.offsetX
   startY= event.offsetY
@@ -23,11 +25,18 @@ function mouseDown3(event){
   diskDrag = !diskDrag
    numDisk = 3  
 }
- function mouseUp(event){
-   diskDrag = !diskDrag
-   console.log(ob1.style.left, ob1.style.top )
-   console.log(event.pageX, event.pageY)
-   }
+
+function newHomeTower(newTower){
+  console.log(newTower)
+}
+
+
+function mouseUp(){
+  diskDrag = !diskDrag
+
+ }
+
+ 
 function mouseMove(event){
   if(!diskDrag){
     return;
@@ -53,24 +62,6 @@ function mouseMove(event){
 }
 
 
-let homeTower
-function newHomeTower1(event){
-  homeTower=1
-  ob1.style.left = 126 + 'px'
-  ob1.style.top = 179 + 'px'
-  console.log(homeTower)
-}
-function newHomeTower2(event){
-  homeTower=2
-  ob1.style.left = 225 + 'px'
-  ob1.style.top = 179 + 'px'
-  console.log(homeTower)
-}
-function newHomeTower3(event){
-  homeTower=3
-  ob1.style.left = 324 + 'px'
-  ob1.style.top = 179 + 'px'
-  console.log(homeTower)
- 
-}
+
+
 
