@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Блин</title>
+    <meta charset="utf-8">
+<script>
+  //global variables
+  var towerIndicator;
+  var towerLefts = [];
+  var towerRights = [];
+  function bodyOnLoad(){
+      var playField = document.getElementById("playField");
+
+      var i = playField.style.left;
+      var j = playField.clientWidth;
+      var k = playField.clientTop;
+      var y = playField.clientHeight;
+      var d = playField.offsetTop;
+
+      for (let i = 0; i < 5; i++) {
+          var newTower = document.createElement('div');
+          newTower.id = 'tower' + i;
+
+          newTower.style.backgroundColor = "red";
+          newTower.style.width = "100px";
+          newTower.style.marginLeft = "30px";
+
+          playField.appendChild(newTower);
+
+          towerLefts.push(newTower.offsetLeft);
+          towerRights.push(newTower.offsetLeft+newTower.clientWidth);
+      }
+
+      towerIndicator = document.getElementById("towerIndicator");
+      towerIndicator.innerText = "";
+  }
+
+  function mouseMove(e){
+      console.log("mouseMove:" + e.clientX + " " + e.clientY + "");
+
+      for(let i=0; i!=towerLefts.length; i++)
+          if( (e.clientX >= towerLefts[i]) && (e.clientX <= towerRights[i]))
+          {
+              towerIndicator.innerText = "tower " + i;
+              return;
+          }
+
+      towerIndicator.innerText = "";
+  }
+</script>
+</head>
+<body onload="bodyOnLoad()">
+<a href="./index.html">&lt;&lt;&nbsp;home</a>
+<H1>динамически созданные башни и определение башни по координатам: <span id="towerIndicator" style="background-color:red">333</span><H1>
+
+    <div id="playField" style="background-color: aliceblue; width:100%; height:500px; display:flex;" onmousemove="mouseMove(event)">
+    </div>
+</body>
+</html>

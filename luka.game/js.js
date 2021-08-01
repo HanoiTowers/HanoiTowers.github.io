@@ -27,7 +27,7 @@ function mouseDown3(event){
 }
 
 function newHomeTower(newTower){
-  console.log(newTower)
+  console.log("new home tower:" +  newTower)
 }
 
 
