@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вызов функции из обработчика событий</title>
+    <meta charset="utf-8">
+    <script>
+        var lastClickedTower = 0;
+
+        function onClick(e){
+            var towernumber = 0;
+            switch (e.target.id) {
+                case("tower1"):
+                    towernumber = 1;
+                    break;
+                case("tower2"):
+                    towernumber = 2;
+                    break;
+                default:
+                    throw "unknown element";
+            }
+
+            takeDiskFromTheTower(lastClickedTower, towernumber);
+        }
+
+        function takeDiskFromTheTower(towerFrom, towerNum){
+            alert("moving from " + towerFrom + " tp " + towerNum);
+            lastClickedTower = towerNum;
+        }
+    </script>
+</head>
+<body>
+<a href="./index.html">&lt;&lt;&nbsp;home</a>
+<H1>нарисованные блины<H1>
+
+    <div style="background-color: aliceblue; width:100%; height:500px; display:flex;">
+        <div id="tower1" style="width: 200px; height: 100%; margin-left:100px; text-align: center; vertical-align: bottom; background: aqua;" onclick="onClick(event)">
+        </div>
+        <div id="tower2" style="width: 200px; height: 100%; margin-left:100px; text-align: center; vertical-align: bottom; background: aqua;" onclick="onClick(event)">
+        </div>
+    </div>
+</body>
+</html>
