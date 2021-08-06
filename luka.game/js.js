@@ -1,66 +1,60 @@
+let trueDisk 
+let trueTower
 
-let numDisk
-let homeTower
 
-let startX
-let startY
 
-var diskDrag = false
-function mouseDown1(event){
-  startX= event.offsetX
-  startY= event.offsetY
-  diskDrag = !diskDrag
-   numDisk = 1
+function whatTow(numTow) {
+  trueTower=numTow
+  console.log(trueTower)
+}
+
+function whatDisk(numDisk) {
+
+  trueDisk=numDisk
+  switch(trueDisk){
+    case 1:
+      switch(trueTower){
+        case 1:
+          alert('первый диск на первую башню')
+        break
+        case 2:
+          alert('первый диск на 2 башню')
+        break
+        case 3:
+          alert('первый диск на 3 башню')
+        break
+      } 
+    break
+    case 2:
+      switch(trueTower){
+        case 1:
+          alert('2 диск на 1 башню')
+        break
+        case 2:
+          alert('2 диск на 2 башню')
+        break
+        case 3:
+          alert('2 диск на 3 башню')
+        break
+      } 
+    break
+    case 3:
+      switch(trueTower){
+        case 1:
+          alert('3 диск на 1 башню')
+        break
+        case 2:
+          alert('3 диск на 2 башню')
+        break
+        case 3:
+          alert('3 диск на 3 башню')
+        break
+      } 
+    break
+  } 
+  console.log(trueDisk)
+}
   
-}
-function mouseDown2(event){
-  startX= event.offsetX
-  startY= event.offsetY
-  diskDrag = !diskDrag
-   numDisk = 2
-}
-function mouseDown3(event){
-  startX= event.offsetX
-  startY= event.offsetY
-  diskDrag = !diskDrag
-   numDisk = 3  
-}
-
-function newHomeTower(newTower){
-  console.log("new home tower:" +  newTower)
-}
-
-
-function mouseUp(){
-  diskDrag = !diskDrag
-
- }
-
- 
-function mouseMove(event){
-  if(!diskDrag){
-    return;
-  }
-  if(numDisk == 1){
-    let ob1 = document.getElementById('ob1')
-    ob1.style.position='absolute'
-    ob1.style.left = (event.pageX - 6 - startX) + 'px'
-    ob1.style.top = (event.pageY - 6 - startY ) + 'px'
-  }
-  if(numDisk == 2){
-    let ob2 = document.getElementById('ob2')
-    ob2.style.position='absolute'
-    ob2.style.left = (event.pageX - 6 - startX) + 'px'
-    ob2.style.top = (event.pageY - 6 - startY ) + 'px'
-  }
-  if(numDisk == 3){
-    let ob3 = document.getElementById('ob3')
-    ob3.style.position='absolute'
-    ob3.style.left = (event.pageX - 6 - startX) + 'px'
-    ob3.style.top = (event.pageY - 6 - startY ) + 'px'
-  }
-}
-
 
 
 
