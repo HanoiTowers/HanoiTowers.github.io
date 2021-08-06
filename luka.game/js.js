@@ -1,6 +1,6 @@
 let trueDisk 
 let trueTower
-
+let ob1 = document.getElementById('ob1') 
 
 
 function whatTow(numTow) {
@@ -16,6 +16,9 @@ function whatDisk(numDisk) {
       switch(trueTower){
         case 1:
           alert('первый диск на первую башню')
+          let ob1 = document.getElementById('ob1')
+          ob1.style.left = 125 +"px"
+          ob1.style.top = 190 +"px" 
         break
         case 2:
           alert('первый диск на 2 башню')
@@ -54,8 +57,10 @@ function whatDisk(numDisk) {
   } 
   console.log(trueDisk)
 }
+function cord(event){
+  console.log(event.pageX, event.pageY)
+}
   
-
 
 
 
