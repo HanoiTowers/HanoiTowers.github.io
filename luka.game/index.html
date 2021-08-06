@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <title>DOM</title>
   
-  <script src="js.js" defer></script>
-  <style>
+  <script src="script.js" ></script>
+  <style >
 
      body{
       padding: 0px ;
@@ -25,7 +25,9 @@
      width: 50px;
      height: 20px;
      background-color: gray;
-     /*z-index: 2;*/
+     z-index: 1;
+      
+      
    }
    #ob2{
      margin: 1px;
@@ -34,7 +36,7 @@
      width: 50px;
      height: 20px;
      background-color: violet;
-     /*z-index: 2;*/
+     z-index: 1;
    }
    #ob3{
      margin: 1px;
@@ -43,7 +45,8 @@
      width: 50px;
      height: 20px;
      background-color: rgb(127, 255, 8);
-     /*z-index: 2;*/
+     z-index: 1;
+     
    }
    .tower{
      margin-top: 50px;
@@ -51,10 +54,11 @@
      width: 5px;
      height: 150px;
      background-color: black;
-     /*z-index: 0;*/
+     
    }
   #tower1{
     left: 150px;
+    
   }
   #tower2{
      left: 250px;
@@ -63,8 +67,6 @@
       left: 350px;
   }
   #liketow1{
-    position: absolute;
-    /*z-index: 1;*/
     width: 100px;
     height: 500px;
     position:absolute;
@@ -73,38 +75,37 @@
     
   }
   #liketow2{
-    position: absolute;
-    /*z-index: 1;*/
     width: 100px;
     height: 500px;
     position:absolute;
     border:solid black 1px;
-    
     left: 201px;
+    
   }
   #liketow3{
-    position: absolute;
-    /*z-index: 1;*/
     width: 100px;
     height: 500px;
     position:absolute;
     border:solid black 1px;
     left: 302px;
+   
   }
 
  </style>
  </head>
  <body>
-   <div id="home" onmousemove="mouseMove(event)">
-   <div id="ob1" onmousedown="mouseDown1(event)"  onmouseup="mouseUp(event)">&nbsp;</div>
-   <div id="ob2" onmousedown="mouseDown2(event)" onmouseup="mouseUp(event)">&nbsp;</div>
-   <div id="ob3" onmousedown="mouseDown3(event)" onmouseup="mouseUp(event)">&nbsp;</div>
-   <div id="liketow1" onmouseenter="newHomeTower(1)" style="background-color: blue;"></div>
+   <div id="home" >
+   <div id="ob1" onclick="whatDisk(1)">&nbsp;</div>
+   <div id="ob2" onclick="whatDisk(2)">&nbsp;</div>
+   <div id="ob3" onclick="whatDisk(3)">&nbsp;</div>
+   
+   <div id="liketow1" onclick="whatTow(1)"></div>
    <div class="tower" id="tower1">&nbsp;</div>
-   <div id="liketow2" onmouseenter="newHomeTower(2)" style="background-color: green;"></div>
+   <div id="liketow2" onclick="whatTow(2)"></div>
    <div class="tower" id="tower2">&nbsp;</div>
-   <div id="liketow3" onmouseenter="newHomeTower(3)" style="background-color: yellow;"></div>
+   <div id="liketow3" onclick="whatTow(3)"></div>
    <div class="tower" id="tower3">&nbsp;</div>
+   </div>
    
  
  </body>
