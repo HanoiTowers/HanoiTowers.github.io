@@ -28,7 +28,7 @@ class Tower{
       console.log("unselected: " + this.num); 
     }
     Push(disk){
-      if(this.disks.)
+     
       this.disks.push(disk)
       this.span.innerText = " disks:"+this.disks.join(",");
       console.log("push " + this.num);
